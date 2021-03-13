@@ -8,7 +8,7 @@ int main()
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
     std::string line;
-	std::regex pattern(R"(([[:alpha:]][[:alnum:],._]{3,}[@])([[:alpha:]]*[.][[:alpha:]]{2,6}))");
+	std::regex pattern(R"(([[:alpha:]][[:alnum:],._]{3,}[@])([[:alpha:]]+[.]?[[:alpha:]]+[.]?[[:alpha:]]+[.]?[[:alpha:]]+[.][[:alpha:]]{2,6}))");
 	getline(std::cin, line);
 	std::sregex_iterator begin(line.cbegin(), line.cend(), pattern);
 	std::sregex_iterator end;
