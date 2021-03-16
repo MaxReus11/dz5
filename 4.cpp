@@ -7,8 +7,10 @@ int main()
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
     std::string line;
-    std::regex pattern1(R"([0-9]{4}[.]([0][0-9]|[1][012])[.]([012][0-9]|[3][01]))");
+	std::cout<<"Enter the string to find date and time:"<<std::endl;
+    std::regex pattern1(R"(([0-9]{4}[.]([0][0-9]|[1][012])[.]([012][0-9]|[3][01]))|(([012][0-9]|[3][01])[.]([0][0-9]|[1][012])[.][0-9]{4}))");
 	std::regex pattern2(R"(([01][0-9]|[2][0123])[:][0-5][0-9][:][0-5][0-9])");
+
 	for (std::string line; getline(std::cin, line);) {
 		std::sregex_iterator begin1(line.cbegin(), line.cend(), pattern1);
 		std::sregex_iterator end1;
